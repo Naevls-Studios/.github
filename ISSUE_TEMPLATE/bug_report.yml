@@ -1,0 +1,97 @@
+name: 🐞 Bug report
+description: Something is broken or behaving differently than expected.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please search existing issues first so we don't get duplicates.
+        **Never paste passwords, API keys, or users' personal data here.**
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: Tapping "Buy" on a PSE stock with 0 balance crashes the app.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Log in as a new user
+        2. Open Market → PSE
+        3. Tap "Buy" on any stock
+        4. App crashes
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Happened once
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: true
+      options:
+        - Android
+        - iOS
+        - Web
+        - Backend / API
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Device, OS & app version / commit
+      placeholder: "Pixel 7, Android 14, v0.3.1 (or commit abc1234)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Your best guess. The triager may change it.
+      options:
+        - "Critical – crash, data loss, security, or blocks everyone"
+        - "High – major feature broken, no workaround"
+        - "Medium – broken but has a workaround"
+        - "Low – cosmetic / minor annoyance"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, stack trace, screenshots
+      description: Paste logs as text. They're rendered as code automatically.
+      render: shell
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Suspected cause, related issues, recent changes that might be involved.
