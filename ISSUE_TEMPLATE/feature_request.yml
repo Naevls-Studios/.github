@@ -1,0 +1,58 @@
+name: ✨ Feature request
+description: Suggest a new feature or an improvement to an existing one.
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the **problem first**, then your idea. A clear problem is easier to prioritize than a solution on its own.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve? Who has it?
+      placeholder: Teachers can't tell which students opened a lesson package while offline.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What should it do? Mockups and sketches welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other ways to solve it, including "do nothing".
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know it's done? Write a checklist.
+      placeholder: |
+        - [ ] Teacher sees an "opened" badge per student
+        - [ ] Syncs once the device is back online
+        - [ ] Works on Android 10+
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Suggested priority
+      options:
+        - "Must have – blocks launch or a key user flow"
+        - "Should have – important, not blocking"
+        - "Nice to have"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, user feedback, competitor examples, related issues.
